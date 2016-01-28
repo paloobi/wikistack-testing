@@ -28,9 +28,10 @@ var pageSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ['open', 'closed']
+        enum: ['open', 'closed'],
+        default: 'open'
     },
-    date:     {
+    date: {
         type: Date,
         default: Date.now
     },
@@ -115,5 +116,7 @@ var User = mongoose.model('User', userSchema);
 
 module.exports = {
     Page: Page,
-    User: User
+    User: User,
+    pageSchema: pageSchema,
+    userSchema: userSchema
 };
