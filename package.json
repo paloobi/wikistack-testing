@@ -4,7 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon -e html,js,css ./server.js"
+    "start": "nodemon -e html,js,css ./server.js",
+    "test": "MODE=testing mocha"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://www.github.com/paloobi/wikistack-testing.git"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +24,9 @@
     "swig": "^1.4.2"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-spies": "^0.7.1",
+    "mocha": "^2.4.4",
     "nodemon": "^1.8.1"
   }
 }

@@ -1,6 +1,14 @@
 var mongoose = require('mongoose');
 var marked = require('marked');
-mongoose.connect('mongodb://localhost/wikistack');
+
+if (process.env.MODE === 'testing') {
+    console.log('Connecting to DB in Testing Mode');
+    mongoose.connect('mongodb://localhost/wikistack-testing');
+} else {
+    console.log('Connecting to DB in Production Mode')
+    mongoose.connect('mongodb://localhost/wikistack');
+}
+
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongodb connection error: '));
